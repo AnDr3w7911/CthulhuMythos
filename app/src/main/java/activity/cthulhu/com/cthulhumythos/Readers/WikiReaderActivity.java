@@ -11,7 +11,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -46,6 +48,7 @@ public class WikiReaderActivity extends Activity {
     protected ImageView imageView;
     protected int index;
     private TextView wikiURL;
+    LinearLayout wikiContentLayout;
     UnexpandedArticle item;
     Section[] sections;
     private String url;
@@ -61,6 +64,7 @@ public class WikiReaderActivity extends Activity {
         setContentView(R.layout.activity_wiki_reader);
         imageURLS = new ArrayList<String>();
         wikiDesc = findViewById(R.id.wikiDescTextView);
+        wikiContentLayout = findViewById(R.id.wikiContent);
         imageView = findViewById(R.id.wikiImage);
         wikiURL = findViewById(R.id.wikiURL);
         item = (UnexpandedArticle) getIntent().getSerializableExtra("ITEM");
@@ -151,12 +155,22 @@ public class WikiReaderActivity extends Activity {
                 }
             }
         }
-        if (!imageURLS.isEmpty()) {
-            String urldisplay = imageURLS.get(0);
-            if (urldisplay != null && !urldisplay.isEmpty()) {
-//                new DownLoadImageTask(imageView).execute(urldisplay);
-            }
-        }
+//        if (!imageURLS.isEmpty()) {
+//            final String urldisplay = imageURLS.get(0);
+//            if (urldisplay != null && !urldisplay.isEmpty()) {
+//                runOnUiThread(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        ImageView extraImage = new ImageView(WikiReaderActivity.this);
+//                        extraImage.setAdjustViewBounds(true);
+//                        extraImage.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+//                        new DownLoadImageTask(extraImage).execute(urldisplay);
+//                        wikiContentLayout.addView(extraImage);
+//                    }
+//                });
+//
+//            }
+//        }
 
     }
 
@@ -169,6 +183,7 @@ public class WikiReaderActivity extends Activity {
             Typeface typeface = MainActivity.typeface;
             // Create a TextView programmatically.
             TextView tv = new TextView(this);
+            tv.setMaxLines(1);
 
             // Create a LayoutParams for TextView
             RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(

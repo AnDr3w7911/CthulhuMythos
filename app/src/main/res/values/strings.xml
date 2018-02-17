@@ -1,0 +1,193 @@
+<resources>
+    <string name="app_name">Mythos</string>
+    <string name="app_title">CTHULHU MYTHOS</string>
+    <string name="oldOnes_button">OLD ONES</string>
+    <string name="works_button">WORKS</string>
+    <string name="monsters_button">MONSTERS</string>
+    <string name="character_button">CHARACTERS</string>
+    <string name="story_name">STORY_NAME</string>
+    <string name="index">INDEX</string>
+    <string name="title_activity_stories">StoriesActivity</string>
+    <string name="item">ITEM</string>
+    <string name="items">ITEMS</string>
+    <string name="base_path">BASE_PATH</string>
+    <string name="category">CATEGORY</string>
+
+    <string name="aboutString">
+        Cthulhu Mythos app was developed by Andrew Turner\n\n
+        Story text is from http://www.hplovecraft.com\n
+        All images and wiki content is from http://lovecraft.wikia.com using their API\n
+        \n\n Thank you for your support
+
+    </string>
+
+    <array name="main_activity_list">
+        <item>WORKS</item>
+        <item>OLD ONES &amp; OUTER GODS</item>
+        <item>HUMANS</item>
+        <item>INHUMANS</item>
+        <item>MONSTERS &amp; ABOMINATIONS</item>
+        <item>TEXTS/TOMES</item>
+        <item>LOCATIONS</item>
+        <item>CTHULHU MYTHOS WORKS</item>
+        <item>OTHER WRITERS</item>
+        <item>ABOUT</item>
+    </array>
+    <array name="categories">
+        <item>Cthulhu Mythos deities</item>
+        <item>humans</item>
+        <item>inhumans</item>
+        <item>Species</item>
+        <item>Occult Texts</item>
+        <item>Locations</item>
+        <item>Cthulhu Mythos works</item>
+        <item>Writers</item>
+    </array>
+
+
+    <array name="lovecraft_stories">
+        <item>The Alchemist</item>
+        <item>At the Mountains of Madness</item>
+        <item>Azathoth</item>
+        <item>The Battle that Ended the Century</item>
+        <item>The Beast in the Cave</item>
+        <item>Beyond the Wall of Sleep</item>
+        <item>The Book</item>
+        <item>The Call of Cthulhu</item>
+        <item>The Case of Charles Dexter Ward</item>
+        <item>The Cats of Ulthar</item>
+        <item>Celephais</item>
+        <item>The Colour Out of Space</item>
+        <item>Cool Air</item>
+        <item>Dagon</item>
+        <item>The Descendant</item>
+        <item>The Doom That Came to Sarnath</item>
+        <item>The Dream-Quest of Unknown Kadath</item>
+        <item>The Dreams in the Witch House</item>
+        <item>The Dunwich Horror</item>
+        <item>The Evil Clergyman</item>
+        <item>Ex Oblivione</item>
+        <item>Facts concerning the Late Arthur Jermyn and His Family</item>
+        <item>The Festival</item>
+        <item>From Beyond</item>
+        <item>The Haunter of the Dark</item>
+        <item>He</item>
+        <item>Herbert West—Reanimator</item>
+        <item>The History of the Necronomicon</item>
+        <item>The Horror at Red Hook</item>
+        <item>The Hound</item>
+        <item>Hypnos</item>
+        <item>Ibid</item>
+        <item>In the Vault</item>
+        <item>The Little Glass Bottle</item>
+        <item>The Lurking Fear</item>
+        <item>Memory</item>
+        <item>The Moon-Bog</item>
+        <item>The Music of Erich Zann</item>
+        <item>The Mysterious Ship</item>
+        <item>The Mystery of the Grave-Yard</item>
+        <item>The Nameless City</item>
+        <item>Nyarlathotep</item>
+        <item>Old Bugs</item>
+        <item>The Other Gods</item>
+        <item>The Outsider</item>
+        <item>Pickman’s Model</item>
+        <item>The Picture in the House</item>
+        <item>Polaris</item>
+        <item>The Quest of Iranon</item>
+        <item>The Rats in the Walls</item>
+        <item>A Reminiscence of Dr. Samuel Johnson</item>
+        <item>The Secret Cave</item>
+        <item>The Shadow out of Time</item>
+        <item>The Shadow Over Innsmouth</item>
+        <item>Discarded Draft of “The Shadow Over Innsmouth”</item>
+        <item>The Shunned House</item>
+        <item>The Silver Key</item>
+        <item>The Statement of Randolph Carter</item>
+        <item>The Strange High House in the Mist</item>
+        <item>The Street</item>
+        <item>Sweet Ermengarde</item>
+        <item>The Temple</item>
+        <item>The Terrible Old Man</item>
+        <item>The Thing in the Moonlight</item>
+        <item>The Thing on the Doorstep</item>
+        <item>The Tomb</item>
+        <item>The Transition of Juan Romero</item>
+        <item>The Tree</item>
+        <item>The Unnamable</item>
+        <item>The Very Old Folk</item>
+        <item>What the Moon Brings</item>
+        <item>The Whisperer in Darkness</item>
+        <item>The White Ship</item>
+    </array>
+
+    <array name="old_ones">
+        <item>Azathoth</item>
+        <item>Bokrug</item>
+        <item>Cthulhu</item>
+        <item>Crom</item>
+        <item>Dagon</item>
+        <item>Ghatanothoa</item>
+        <item>Hastur</item>
+        <item>Hydra</item>
+        <item>Nug and Yeb</item>
+        <item>Nyarlathotep</item>
+        <item>Shub-Niggurath</item>
+        <item>Thog</item>
+        <item>Umr At-Tawil</item>
+        <item>Y\'golonac</item>
+        <item>Yig</item>
+        <item>Yog-Sothoth</item>
+
+    </array>
+    <array name="people">
+        <item>Abdul Alhazred</item>
+        <item>Angstrom</item>
+        <item>Atwood</item>
+        <item>Canfield, Simon</item>
+        <item>Castro</item>
+        <item>Collins</item>
+        <item>Comte d\'Erlette</item>
+        <item>Dana Anne Shirefield</item>
+        <item>Danforth</item>
+        <item>Donovan</item>
+        <item>Dunwich horror (being)</item>
+        <item>Francis Wayland Thurston</item>
+        <item>Frank H. Pabodie</item>
+        <item>George Gammell Angell</item>
+        <item>Green</item>
+        <item>Guerrera</item>
+        <item>Gustaf Johansen</item>
+        <item>Hawkins</item>
+        <item>Henry Anthony Wilcox</item>
+        <item>Herbert West</item>
+        <item>John Raymond Legrasse</item>
+        <item>John Richmond</item>
+        <item>Jones, Richmond M., PhD</item>
+        <item>Keziah Mason</item>
+        <item>Lake</item>
+        <item>Lavinia Whateley</item>
+        <item>Barnabas Marsh</item>
+        <item>Obed Marsh, Captain</item>
+        <item>Old Whateley</item>
+        <item>Richard Upton Pickman</item>
+        <item>Robert Olmstead</item>
+        <item>Parker</item>
+        <item>Peter B. Carr</item>
+        <item>Professor Bradley</item>
+        <item>Professor Chambers</item>
+        <item>Professor Mayfield</item>
+        <item>Randolph Carter</item>
+        <item>Rodriguez</item>
+        <item>The Black Man</item>
+        <item>The Jermyn family</item>
+        <item>The Marsh Family</item>
+        <item>Thurber</item>
+        <item>Vulthoom</item>
+        <item>Walter Gilman</item>
+        <item>Wilbur Whateley</item>
+        <item>William Briden</item>
+        <item>William Channing Webb</item>
+        <item>William Dyer</item>
+    </array>
+</resources>

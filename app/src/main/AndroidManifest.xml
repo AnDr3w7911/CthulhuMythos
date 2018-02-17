@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="activity.cthulhu.com.cthulhumythos">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ListActivities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ListActivities.StoriesActivity" />
+        <activity android:name=".Readers.ReaderActivity" />
+        <activity android:name=".ListActivities.OldOnesActivity" />
+        <activity android:name=".Readers.OldOnesWikiReader" />
+        <activity android:name=".Readers.WikiReaderActivity" />
+        <activity android:name=".ListActivities.WikiListActivity" />
+        <activity android:name=".Readers.WebReaderActivity" />
+        <activity android:name=".About.AboutActivity"></activity>
+    </application>
+
+</manifest>

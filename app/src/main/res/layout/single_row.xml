@@ -11,6 +11,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="@dimen/title_size"
         android:gravity="center"
+        android:textColor="@color/colorText"
         android:padding="10dp"
         />
 

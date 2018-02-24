@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context="activity.cthulhu.com.cthulhumythos.Readers.WikiReaderActivity">
 
     <ScrollView
@@ -33,7 +34,8 @@
                 android:layout_height="wrap_content"
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textSize="@dimen/text_size" />
+                android:textSize="@dimen/text_size"
+                android:textColor="@color/colorText"/>
             <TextView
                 android:id="@+id/wikiURL"
                 android:layout_width="wrap_content"
@@ -41,7 +43,8 @@
                 android:padding="5dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textSize="@dimen/text_size"
-                android:onClick="openWebPage"/>
+                android:onClick="openWebPage"
+                android:textColor="@color/colorText"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

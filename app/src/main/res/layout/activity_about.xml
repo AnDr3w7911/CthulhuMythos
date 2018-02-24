@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context="activity.cthulhu.com.cthulhumythos.About.AboutActivity">
 
     <TextView
@@ -14,6 +15,7 @@
         android:layout_weight="1"
         android:text="@string/aboutString"
         style="@style/AppTheme"
+        android:textColor="@color/colorText"
         android:textSize="@dimen/text_size"
         android:padding="15dp"
         android:autoLink="web"/>
@@ -23,6 +25,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorText"
         android:text="DONATE"
         android:textSize="@dimen/title_size"
         android:onClick="donate"/>

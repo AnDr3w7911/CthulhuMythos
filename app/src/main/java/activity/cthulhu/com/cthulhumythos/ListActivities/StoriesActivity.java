@@ -21,40 +21,8 @@ public class StoriesActivity extends ListActivity {
         if (getActionBar() != null) {
             getActionBar().hide();
         }
-//        {// Set the ActionBar's font and text color
-//            // Get the ActionBar
-//            ActionBar ab = getActionBar();
-//
-//            Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/october_crow.ttf");
-//            // Create a TextView programmatically.
-//            TextView tv = new TextView(this);
-//
-//            // Create a LayoutParams for TextView
-//            RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
-//                    RelativeLayout.LayoutParams.MATCH_PARENT, // Width of TextView
-//                    RelativeLayout.LayoutParams.WRAP_CONTENT); // Height of TextView
-//
-//            // Apply the layout parameters to TextView widget
-//            tv.setLayoutParams(lp);
-//
-//            // Set text to display in TextView
-//            tv.setText(R.string.works_button); // ActionBar title text
-//
-//            // Set the text color of TextView to black
-////            tv.setTextColor(Color.GREEN);
-//            tv.setTextSize(46f);
-//            tv.setGravity(Gravity.CENTER);
-//
-//            // Set the monospace font for TextView text
-//            // This will change ActionBar title text font
-//            tv.setTypeface(typeface);
-//
-//            // Set the ActionBar display option
-//            ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-//
-//            // Finally, set the newly created TextView as ActionBar custom view
-//            ab.setCustomView(tv);
-//        }
+        getListView().setBackgroundColor(getResources().getColor(R.color.colorPrimary));
+
         {// Set the font of the buttons
             stories = getResources().getStringArray(R.array.lovecraft_stories);
             getListView().setAdapter(new CustomAdapter(this, R.layout.single_row, stories));

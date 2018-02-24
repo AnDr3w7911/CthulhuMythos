@@ -34,6 +34,7 @@ public class WikiListActivity extends ListActivity {
         if (getActionBar() != null) {
             getActionBar().hide();
         }
+        getListView().setBackgroundColor(getResources().getColor(R.color.colorPrimary));
         category = getIntent().getStringExtra(getResources().getString(R.string.category));
         Log.d("WikiListActivity", category);
 

@@ -5,8 +5,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -14,34 +19,53 @@ import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
 import activity.cthulhu.com.cthulhumythos.About.AboutActivity;
-import activity.cthulhu.com.cthulhumythos.Util.CustomAdapter;
 import activity.cthulhu.com.cthulhumythos.R;
+import activity.cthulhu.com.cthulhumythos.Util.CustomAdapter;
+import activity.cthulhu.com.cthulhumythos.Util.MyAdapter;
+import activity.cthulhu.com.cthulhumythos.Util.RecyclerItemClickListener;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     public static Typeface typeface;
     private String[] categories;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         typeface = Typeface.createFromAsset(getAssets(), "fonts/october_crow.ttf");
-        setActionBar();
+
+        CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbar.setTitle("CTHULHU MYTHOS");
+        collapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.colorText));
+        collapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.colorText));
+//        collapsingToolbar.setCollapsedTitleGravity(Gravity.CENTER);
+        collapsingToolbar.setExpandedTitleGravity(Gravity.CENTER|Gravity.BOTTOM);
+        collapsingToolbar.setCollapsedTitleTypeface(typeface);
+        collapsingToolbar.setExpandedTitleTypeface(typeface);
+//        setActionBar();
         {// Set the font of the buttons
-            ListView listView = findViewById(R.id.main_menu_listView);
+            RecyclerView listView = findViewById(R.id.main_menu_listView);
+            listView.setHasFixedSize(true);
+
             categories = getResources().getStringArray(R.array.main_activity_list);
-            listView.setAdapter(new CustomAdapter(this, R.layout.single_row, categories));
-            AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+//            listView.setAdapter(new CustomAdapter(this, R.layout.single_row, categories));
+            listView.setLayoutManager(new LinearLayoutManager(this));
+            listView.setAdapter(new MyAdapter(categories));
+
+            listView.addOnItemTouchListener(new RecyclerItemClickListener(this, listView, new RecyclerItemClickListener.OnItemClickListener() {
                 @Override
-                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                public void onItemClick(View view, int position) {
                     Intent intent = null;
                     String[] categories = getResources().getStringArray(R.array.categories);
-                    if (i == 0) {
+                    if (position == 0) {
                         intent = new Intent(MainActivity.this, StoriesActivity.class);
 
-                    } else if (i < categories.length + 1) {
+                    } else if (position < categories.length + 1) {
                         intent = new Intent(MainActivity.this, WikiListActivity.class);
-                        intent.putExtra(getResources().getString(R.string.category), categories[i - 1]);
+                        intent.putExtra(getResources().getString(R.string.category), categories[position - 1]);
                     } else {
                         intent = new Intent(MainActivity.this, AboutActivity.class);
                     }
@@ -50,45 +74,14 @@ public class MainActivity extends Activity {
                         startActivity(intent);
                     }
                 }
-            };
-            listView.setOnItemClickListener(itemClickListener);
+
+                @Override
+                public void onLongItemClick(View view, int position) {
+
+                }
+            }));
         }
 
-    }
-
-    private void setActionBar() {
-        // Set the ActionBar's font and text color
-        // Get the ActionBar
-        ActionBar ab = getActionBar();
-
-        // Create a TextView programmatically.
-        TextView tv = new TextView(this);
-
-        // Create a LayoutParams for TextView
-        LayoutParams lp = new RelativeLayout.LayoutParams(
-                LayoutParams.MATCH_PARENT, // Width of TextView
-                LayoutParams.WRAP_CONTENT); // Height of TextView
-
-        // Apply the layout parameters to TextView widget
-        tv.setLayoutParams(lp);
-
-        // Set text to display in TextView
-        tv.setText(R.string.app_title); // ActionBar title text
-
-        // Set the text color of TextView to black
-//            tv.setTextColor(Color.GREEN);
-        tv.setTextSize(46f);
-        tv.setGravity(Gravity.CENTER);
-
-        // Set the monospace font for TextView text
-        // This will change ActionBar title text font
-        tv.setTypeface(typeface);
-
-        // Set the ActionBar display option
-        ab.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-
-        // Finally, set the newly created TextView as ActionBar custom view
-        ab.setCustomView(tv);
     }
 
     @Override

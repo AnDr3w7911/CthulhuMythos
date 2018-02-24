@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:textSize="20dp"
         style="@style/AppTheme"
+        android:background="@color/colorPrimary"
         />
 
 </LinearLayout>

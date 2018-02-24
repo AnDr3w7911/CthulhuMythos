@@ -23,7 +23,7 @@ public class AboutActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
-        setActionBar();
+//        setActionBar();
         ((Button)findViewById(R.id.donateButton)).setTypeface(MainActivity.typeface);
 //        WebView webView = findViewById(R.id.aboutWebView);
 //        webView.setBackgroundColor(android.R.attr.editTextBackground);

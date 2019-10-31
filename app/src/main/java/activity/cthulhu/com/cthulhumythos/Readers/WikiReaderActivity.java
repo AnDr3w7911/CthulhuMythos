@@ -9,9 +9,13 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -42,13 +46,13 @@ import activity.cthulhu.com.cthulhumythos.WikiObjects.SectionImages;
 import activity.cthulhu.com.cthulhumythos.WikiObjects.UnexpandedArticle;
 import activity.cthulhu.com.cthulhumythos.WikiObjects.UnexpandedListArticleResultSet;
 
-public class WikiReaderActivity extends Activity {
+public class WikiReaderActivity extends AppCompatActivity {
 
     protected TextView wikiDesc;
     protected ImageView imageView;
     protected int index;
     private TextView wikiURL;
-    LinearLayout wikiContentLayout;
+    //    LinearLayout wikiContentLayout;
     UnexpandedArticle item;
     Section[] sections;
     private String url;
@@ -60,23 +64,37 @@ public class WikiReaderActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wiki_reader);
+
+
         imageURLS = new ArrayList<String>();
         wikiDesc = findViewById(R.id.wikiDescTextView);
-        wikiContentLayout = findViewById(R.id.wikiContent);
+//        wikiContentLayout = findViewById(R.id.wikiContent);
         imageView = findViewById(R.id.wikiImage);
         wikiURL = findViewById(R.id.wikiURL);
         item = (UnexpandedArticle) getIntent().getSerializableExtra("ITEM");
         resultSet = (UnexpandedListArticleResultSet) getIntent().getSerializableExtra(getResources().getString(R.string.items));
         index = getIntent().getIntExtra(getResources().getString(R.string.index), 0);
         category = getIntent().getStringExtra(getResources().getString(R.string.category));
-        setTitleBar(item.title);
+//        setTitleBar(item.title);
+        {
+            CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.wiki_reader_collapsing_toolbar);
+            collapsingToolbar.setTitle(item.title);
+
+            collapsingToolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.colorText));
+            collapsingToolbar.setExpandedTitleColor(getResources().getColor(R.color.colorText));
+//        collapsingToolbar.setCollapsedTitleGravity(Gravity.CENTER);
+            collapsingToolbar.setExpandedTitleGravity(Gravity.CENTER | Gravity.BOTTOM);
+            collapsingToolbar.setCollapsedTitleTypeface(MainActivity.typeface);
+            collapsingToolbar.setExpandedTitleTypeface(MainActivity.typeface);
+        }
         url = getIntent().getStringExtra(getResources().getString(R.string.base_path)) + item.url;
         wikiURL.setText(url);
         getWikiContent();
 
-        findViewById(R.id.wikiScrollView).setOnTouchListener(new OnSwipeTouchListener(this) {
+        OnSwipeTouchListener listener = new OnSwipeTouchListener(this) {
             public void onSwipeRight() {
                 goToItem(index - 1);
 //                Toast.makeText(WikiReaderActivity.this, "right", Toast.LENGTH_SHORT).show();
@@ -87,7 +105,9 @@ public class WikiReaderActivity extends Activity {
 //                Toast.makeText(WikiReaderActivity.this, "left", Toast.LENGTH_SHORT).show();
                 goToItem(index + 1);
             }
-        });
+        };
+        findViewById(R.id.wiki_scroll_view).setOnTouchListener(listener);
+        findViewById(R.id.wiki_reader_Layout).setOnTouchListener(listener);
     }
 
     private void goToItem(int index) {
@@ -123,7 +143,11 @@ public class WikiReaderActivity extends Activity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Picasso.with(WikiReaderActivity.this).load(thumbnail).into(imageView);
+                            if (!thumbnail.contains("https:")) {
+                                imageView.setImageResource(R.drawable.elder_sign);
+                            } else {
+                                Picasso.with(WikiReaderActivity.this).load(thumbnail).into(imageView);
+                            }
                             wikiDesc.setText(wikiText);
                         }
                     });
@@ -155,30 +179,14 @@ public class WikiReaderActivity extends Activity {
                 }
             }
         }
-//        if (!imageURLS.isEmpty()) {
-//            final String urldisplay = imageURLS.get(0);
-//            if (urldisplay != null && !urldisplay.isEmpty()) {
-//                runOnUiThread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        ImageView extraImage = new ImageView(WikiReaderActivity.this);
-//                        extraImage.setAdjustViewBounds(true);
-//                        extraImage.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-//                        new DownLoadImageTask(extraImage).execute(urldisplay);
-//                        wikiContentLayout.addView(extraImage);
-//                    }
-//                });
-//
-//            }
-//        }
 
     }
 
     protected void setTitleBar(String title) {
+
         ActionBar ab = getActionBar();
         if (ab != null) {// Set the ActionBar's font and text color
             // Get the ActionBar
-
 
             Typeface typeface = MainActivity.typeface;
             // Create a TextView programmatically.

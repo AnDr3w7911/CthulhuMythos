@@ -13,7 +13,7 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
 
     private final GestureDetector gestureDetector;
 
-    public OnSwipeTouchListener (Context ctx){
+    public OnSwipeTouchListener(Context ctx) {
         gestureDetector = new GestureDetector(ctx, new GestureListener());
     }
 
@@ -24,8 +24,8 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
 
     private final class GestureListener extends GestureDetector.SimpleOnGestureListener {
 
-        private static final int SWIPE_THRESHOLD = 100;
-        private static final int SWIPE_VELOCITY_THRESHOLD = 100;
+        private static final int SWIPE_THRESHOLD = 300;
+        private static final int SWIPE_VELOCITY_THRESHOLD = 200;
 
         @Override
         public boolean onDown(MotionEvent e) {
@@ -35,29 +35,32 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             boolean result = false;
-            try {
-                float diffY = e2.getY() - e1.getY();
-                float diffX = e2.getX() - e1.getX();
-                if (Math.abs(diffX) > Math.abs(diffY)) {
-                    if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
-                        if (diffX > 0) {
-                            onSwipeRight();
-                        } else {
-                            onSwipeLeft();
+            if (e1 != null && e2 != null) {
+                try {
+                    float diffY = e2.getY() - e1.getY();
+                    float diffX = e2.getX() - e1.getX();
+                    if (Math.abs(diffX) > Math.abs(diffY)) {
+                        if (Math.abs(diffX) > SWIPE_THRESHOLD && Math.abs(velocityX) > SWIPE_VELOCITY_THRESHOLD) {
+                            if (diffX > 0) {
+                                onSwipeRight();
+                            } else {
+                                onSwipeLeft();
+                            }
+                            result = true;
                         }
-                        result = true;
                     }
-                }
-//                else if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
-//                    if (diffY > 0) {
-//                        onSwipeBottom();
-//                    } else {
-//                        onSwipeTop();
+//                    else  if (Math.abs(diffY) > SWIPE_THRESHOLD && Math.abs(velocityY) > SWIPE_VELOCITY_THRESHOLD) {
+//                        if (diffY > 0) {
+//                            onSwipeBottom();
+//                        } else {
+//                            onSwipeTop();
+//                        }
+//                        result = true;
 //                    }
-//                    result = true;
-//                }
-            } catch (Exception exception) {
-                exception.printStackTrace();
+
+                } catch (Exception exception) {
+                    exception.printStackTrace();
+                }
             }
             return result;
         }

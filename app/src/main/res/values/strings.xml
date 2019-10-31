@@ -23,7 +23,8 @@
 
     <array name="main_activity_list">
         <item>WORKS</item>
-        <item>OLD ONES &amp; OUTER GODS</item>
+        <item>OLD ONES</item>
+        <item>OUTER GODS</item>
         <item>HUMANS</item>
         <item>INHUMANS</item>
         <item>MONSTERS &amp; ABOMINATIONS</item>
@@ -32,13 +33,15 @@
         <item>CTHULHU MYTHOS WORKS</item>
         <item>OTHER WRITERS</item>
         <item>ABOUT</item>
+        <item></item>
     </array>
     <array name="categories">
-        <item>Cthulhu Mythos deities</item>
+        <item>Great Old Ones</item>
+        <item>Outer Gods</item>
         <item>humans</item>
         <item>inhumans</item>
         <item>Species</item>
-        <item>Occult Texts</item>
+        <item>Mythos Books</item>
         <item>Locations</item>
         <item>Cthulhu Mythos works</item>
         <item>Writers</item>
@@ -57,32 +60,49 @@
         <item>The Case of Charles Dexter Ward</item>
         <item>The Cats of Ulthar</item>
         <item>Celephais</item>
-        <item>The Colour Out of Space</item>
+        <item>The Challenge from Beyond</item>
+        <item>Collapsing Cosmoses</item>
+        <item>The Colour out of Space</item>
         <item>Cool Air</item>
+        <item>The Crawling Chaos</item>
+        <item>The Curse of Yig</item>
         <item>Dagon</item>
         <item>The Descendant</item>
+        <item>The Diary of Alonzo Typer</item>
+        <item>The Disinterment</item>
         <item>The Doom That Came to Sarnath</item>
         <item>The Dream-Quest of Unknown Kadath</item>
         <item>The Dreams in the Witch House</item>
         <item>The Dunwich Horror</item>
+        <item>The Electric Executioner</item>
         <item>The Evil Clergyman</item>
         <item>Ex Oblivione</item>
-        <item>Facts concerning the Late Arthur Jermyn and His Family</item>
+        <item>Facts Concerning the Late Arthur Jermyn and His Family</item>
         <item>The Festival</item>
         <item>From Beyond</item>
+        <item>The Green Meadow</item>
         <item>The Haunter of the Dark</item>
         <item>He</item>
         <item>Herbert West—Reanimator</item>
         <item>The History of the Necronomicon</item>
+        <item>The Hoard of the Wizard-Beast</item>
+        <item>The Horror at Martin’s Beach</item>
         <item>The Horror at Red Hook</item>
+        <item>The Horror in the Burying-Ground</item>
+        <item>The Horror in the Museum</item>
         <item>The Hound</item>
         <item>Hypnos</item>
         <item>Ibid</item>
         <item>In the Vault</item>
+        <item>In the Walls of Eryx</item>
+        <item>The Last Test</item>
         <item>The Little Glass Bottle</item>
         <item>The Lurking Fear</item>
+        <item>The Man of Stone</item>
+        <item>Medusa’s Coil</item>
         <item>Memory</item>
         <item>The Moon-Bog</item>
+        <item>The Mound</item>
         <item>The Music of Erich Zann</item>
         <item>The Mysterious Ship</item>
         <item>The Mystery of the Grave-Yard</item>

@@ -1,7 +1,5 @@
 package activity.cthulhu.com.cthulhumythos.ListActivities;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -12,15 +10,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.RelativeLayout;
-import android.widget.RelativeLayout.LayoutParams;
-import android.widget.TextView;
 
 import activity.cthulhu.com.cthulhumythos.About.AboutActivity;
 import activity.cthulhu.com.cthulhumythos.R;
-import activity.cthulhu.com.cthulhumythos.Util.CustomAdapter;
 import activity.cthulhu.com.cthulhumythos.Util.MyAdapter;
 import activity.cthulhu.com.cthulhumythos.Util.RecyclerItemClickListener;
 

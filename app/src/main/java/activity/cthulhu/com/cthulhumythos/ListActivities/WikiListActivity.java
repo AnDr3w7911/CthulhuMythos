@@ -42,7 +42,7 @@ public class WikiListActivity extends ListActivity {
             @Override
             public void run() {
                 try {
-                    String object = WikiUtil.getJSONObjectFromURL("http://lovecraft.wikia.com/api/v1/Articles/List?category=" + category + "&limit=250");
+                    String object = WikiUtil.getJSONObjectFromURL("https://lovecraft.fandom.com/api/v1/Articles/List?category=" + category + "&limit=250");
 //                    String object = WikiUtil.getJSONObjectFromURL("http://lovecraft.wikia.com/api/v1/Articles/Top?category=" + category + "&limit=250");
                     Gson gson = new Gson();
 

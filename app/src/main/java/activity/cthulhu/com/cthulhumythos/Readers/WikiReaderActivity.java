@@ -131,14 +131,16 @@ public class WikiReaderActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    String jsonStr = WikiUtil.getJSONObjectFromURL("http://lovecraft.wikia.com/api/v1/Articles/AsSimpleJson?id=" + item.id);
+                    String jsonStr = WikiUtil.getJSONObjectFromURL("https://lovecraft.fandom.com/api/v1/Articles/AsSimpleJson?id=" + item.id);
                     Gson gson = new Gson();
                     ContentResult contentResult = gson.fromJson(jsonStr, ContentResult.class);
                     sections = contentResult.sections;
                     parseContent();
-                    String jsonStr2 = WikiUtil.getJSONObjectFromURL("http://lovecraft.wikia.com/api/v1/Articles/Details?ids=" + item.id + "&abstract=10&width=500&height=500");
+                    String jsonStr2 = WikiUtil.getJSONObjectFromURL("https://lovecraft.fandom.com/api/v1/Articles/Details?ids=" + item.id + "&abstract=10&width=500&height=500");
                     String subStr = jsonStr2.substring(jsonStr2.indexOf("thumbnail\":\"") + 12);
-                    final String thumbnail = subStr.substring(0, subStr.indexOf("\""));
+
+                    final String thumbnail = subStr.substring(0, subStr.indexOf("\"")).replace("\\", "");
+
 
                     runOnUiThread(new Runnable() {
                         @Override

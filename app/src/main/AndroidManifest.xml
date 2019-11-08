@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="activity.cthulhu.com.cthulhumythos">
-
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -27,6 +27,9 @@
         <activity android:name=".ListActivities.WikiListActivity" />
         <activity android:name=".Readers.WebReaderActivity" />
         <activity android:name=".About.AboutActivity"></activity>
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-2304581159060850~3175991742"/>
     </application>
 
 </manifest>

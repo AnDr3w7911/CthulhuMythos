@@ -1,7 +1,6 @@
 package activity.cthulhu.com.cthulhumythos.Readers;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -9,18 +8,14 @@ import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import com.google.android.material.appbar.CollapsingToolbarLayout;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
@@ -148,7 +143,7 @@ public class WikiReaderActivity extends AppCompatActivity {
                             if (!thumbnail.contains("https:")) {
                                 imageView.setImageResource(R.drawable.elder_sign);
                             } else {
-                                Picasso.with(WikiReaderActivity.this).load(thumbnail).into(imageView);
+                                Picasso.get().load(thumbnail).into(imageView);
                             }
                             wikiDesc.setText(wikiText);
                         }

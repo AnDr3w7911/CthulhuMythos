@@ -1,4 +1,6 @@
 <resources>
+    <string name="adID">ca-app-pub-3940256099942544/6300978111</string>
+<!--    <string name="adID">ca-app-pub-2304581159060850~3175991742</string>-->
     <string name="app_name">Mythos</string>
     <string name="app_title">CTHULHU MYTHOS</string>
     <string name="oldOnes_button">OLD ONES</string>
@@ -17,12 +19,13 @@
         Cthulhu Mythos app was developed by Andrew Turner\n\n
         Story text is from http://www.hplovecraft.com\n
         All images and wiki content is from http://lovecraft.wikia.com using their API\n
-        \n\n Thank you for your support
+        \n\n Thank you for your support!
 
     </string>
 
     <array name="main_activity_list">
         <item>WORKS</item>
+        <item>SEARCH</item>
         <item>OLD ONES</item>
         <item>OUTER GODS</item>
         <item>HUMANS</item>
@@ -36,6 +39,7 @@
         <item></item>
     </array>
     <array name="categories">
+        <item>Search</item>
         <item>Great Old Ones</item>
         <item>Outer Gods</item>
         <item>humans</item>
@@ -45,6 +49,7 @@
         <item>Locations</item>
         <item>Cthulhu Mythos works</item>
         <item>Writers</item>
+
     </array>
 
 
@@ -107,11 +112,12 @@
         <item>The Mysterious Ship</item>
         <item>The Mystery of the Grave-Yard</item>
         <item>The Nameless City</item>
+        <item>The Night Ocean</item>
         <item>Nyarlathotep</item>
         <item>Old Bugs</item>
         <item>The Other Gods</item>
         <item>The Outsider</item>
-        <item>Pickman’s Model</item>
+        <item>Pickman\'s Model</item>
         <item>The Picture in the House</item>
         <item>Polaris</item>
         <item>The Quest of Iranon</item>

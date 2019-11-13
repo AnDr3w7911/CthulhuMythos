@@ -29,7 +29,7 @@
         <activity android:name=".About.AboutActivity"></activity>
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2304581159060850~3175991742"/>
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
     </application>
 
 </manifest>

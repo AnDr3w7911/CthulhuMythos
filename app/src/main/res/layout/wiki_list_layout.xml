@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:hint="SEARCH"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="@dimen/title_size"
+        android:gravity="center"
+        android:textColor="@color/colorText"
+        android:padding="10dp"
+
+        android:background="@color/colorPrimary"/>
+
+
+    <ListView android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:layout_weight="1"
+        android:drawSelectorOnTop="false"/>
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        ads:adSize="FULL_BANNER"
+        ads:adUnitId="@string/adID">
+    </com.google.android.gms.ads.AdView>
+
+
+</LinearLayout>

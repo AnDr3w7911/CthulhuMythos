@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Toast;
@@ -34,7 +35,7 @@ public class WebReaderActivity extends Activity {
         InputStream is;
 
         try {
-            is = getAssets().open("stories/" + storyName + ".txt");
+            is = getAssets().open("stories/" + storyName.replaceAll("[\\.]", "") + ".txt");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

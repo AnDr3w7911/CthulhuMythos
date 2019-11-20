@@ -35,7 +35,7 @@ public class WebReaderActivity extends Activity {
         InputStream is;
 
         try {
-            is = getAssets().open("stories/" + storyName.replaceAll("[\\.]", "") + ".txt");
+            is = getAssets().open("stories/" + storyName.replaceAll("[\\.']", "") + ".txt");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);

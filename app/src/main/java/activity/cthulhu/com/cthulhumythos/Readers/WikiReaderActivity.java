@@ -140,9 +140,7 @@ public class WikiReaderActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            if (!thumbnail.contains("https:")) {
-                                imageView.setImageResource(R.drawable.elder_sign);
-                            } else {
+                            if (thumbnail.contains("https:")) {
                                 Picasso.get().load(thumbnail).into(imageView);
                             }
                             wikiDesc.setText(wikiText);

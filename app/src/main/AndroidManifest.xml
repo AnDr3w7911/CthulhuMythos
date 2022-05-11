@@ -21,8 +21,6 @@
         </activity>
         <activity android:name=".ListActivities.StoriesActivity" />
         <activity android:name=".Readers.ReaderActivity" />
-        <activity android:name=".ListActivities.OldOnesActivity" />
-        <activity android:name=".Readers.OldOnesWikiReader" />
         <activity android:name=".Readers.WikiReaderActivity" />
         <activity android:name=".ListActivities.WikiListActivity" />
         <activity android:name=".Readers.WebReaderActivity" />

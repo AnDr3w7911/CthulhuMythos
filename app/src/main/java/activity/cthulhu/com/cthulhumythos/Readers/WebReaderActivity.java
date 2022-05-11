@@ -2,17 +2,22 @@ package activity.cthulhu.com.cthulhumythos.Readers;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
 
 import activity.cthulhu.com.cthulhumythos.R;
+import activity.cthulhu.com.cthulhumythos.Util.OnSwipeTouchListener;
 
 public class WebReaderActivity extends Activity {
     private int currentPage;
@@ -64,6 +69,7 @@ public class WebReaderActivity extends Activity {
         webView.loadDataWithBaseURL(null, text, "text/html", "utf-8", "about:blank");
         webView.setBackgroundColor(android.R.attr.editTextBackground);
         WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
         settings.setDefaultFontSize(20);
         webView.setScrollY(savedScrollY);
 //        settings.setTextZoom(125);

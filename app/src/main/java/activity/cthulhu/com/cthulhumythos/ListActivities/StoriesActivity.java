@@ -32,7 +32,7 @@ public class StoriesActivity extends ListActivity {
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
-        Toast.makeText(StoriesActivity.this, "CLICKED: " + stories[position], Toast.LENGTH_SHORT).show();
+//        Toast.makeText(StoriesActivity.this, "CLICKED: " + stories[position], Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(StoriesActivity.this, WebReaderActivity.class);
         intent.putExtra(getResources().getString(R.string.story_name), stories[position]);
         startActivity(intent);
